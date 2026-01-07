@@ -14,7 +14,7 @@ export const getMentorDashboard = async (req: AuthRequest, res: Response, next: 
         } 
         if (req.user.role !== 'MENTOR') {
             throw new AppError("Access denied. Mentors only.", 403);
-        }
+        } 
 
         const result = await mentorService.getMentorDashboardService(userId);
         res.status(200).json(result);
